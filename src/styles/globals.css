@@ -1,0 +1,699 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@200..900&display=swap");
+html {
+  font-family: "Noto Sans KR", serif;
+}
+
+body {
+  margin: 0;
+  --wrapper-max-width: 70rem;
+  --wrapper-column: calc(var(--wrapper-max-width) / 3);
+  --wrapper-padding-inline: 5vw;
+
+  background-color: rgb(250, 246, 239);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+p {
+  line-height: 200%;
+}
+
+.wrapper {
+  max-width: var(--wrapper-max-width);
+  margin-inline: auto;
+  padding-inline: var(--wrapper-padding-inline);
+
+  padding-block: 8rem;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+/* Header >>> */
+header,
+.header-reverse {
+  position: relative;
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-name {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+
+  font-family: "Noto Serif KR", serif;
+  font-size: 2.2rem;
+  font-weight: 300;
+  letter-spacing: 13%;
+
+  z-index: 1;
+
+  order: 2;
+
+  margin-right: min(15vw, 7rem);
+  margin-top: 4.5rem;
+
+  pointer-events: none;
+}
+
+.logo-name > span {
+  display: block;
+  margin-left: 0.1rem;
+}
+
+.logo-name-part:nth-child(1) {
+}
+
+.logo-name-part:nth-child(2) {
+  margin-top: 4rem;
+}
+.logo-name-part:nth-child(3) {
+  margin-top: 10rem;
+}
+
+nav {
+  order: 1;
+}
+
+.header-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+
+  pointer-events: none;
+}
+
+.header-reverse .header-list {
+  align-items: end;
+}
+
+.link {
+  position: relative;
+  letter-spacing: 6%;
+  width: fit-content;
+  font-size: 2.4rem;
+  font-weight: 800;
+  word-break: keep-all;
+  animation: shake 30s infinite;
+
+  pointer-events: auto;
+}
+
+.gray-link {
+  color: #666;
+  position: relative;
+  letter-spacing: 6%;
+  width: fit-content;
+  font-size: 2.4rem;
+  font-weight: 800;
+  word-break: keep-all;
+  animation: shake 30s infinite;
+}
+
+.underline {
+  position: absolute;
+
+  left: 0;
+  top: 100%;
+  margin: 0 auto;
+
+  height: 5px;
+  background-color: #000;
+  width: 0%;
+
+  transition: width 0.6s ease;
+}
+
+.header-reverse .underline {
+  left: auto;
+  right: 0;
+  margin: auto 0;
+}
+
+.link:hover .underline {
+  width: 100%;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(2px, 3px) rotate(0.5deg);
+  }
+  50% {
+    transform: translate(0, -1px) rotate(-0.3deg);
+  }
+  75% {
+    transform: translate(-3px, 2px) rotate(0.2deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+.header-illustration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  z-index: -1;
+}
+
+/* <<< Header */
+
+/* Footer >>> */
+footer {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+
+  font-size: 0.8rem;
+}
+
+.watermark {
+  margin-top: 1rem;
+}
+
+.author-link {
+  font-weight: 800;
+}
+/* <<< Footer */
+
+/* Main >>> */
+main {
+  margin-block: 8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+}
+
+.illustration {
+  width: calc(100% + (var(--wrapper-padding-inline) * 2));
+  height: 40rem;
+
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+
+  transform: translateX(calc(-1 * var(--wrapper-padding-inline)));
+}
+
+figcaption {
+  color: #333;
+  text-align: right;
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-top: 0.3rem;
+  padding-right: 1rem;
+}
+
+.text {
+  columns: 16rem auto;
+  column-gap: 3rem;
+}
+
+.section-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section-title {
+  flex: 1;
+  min-width: 10rem;
+
+  font-size: 1.2rem;
+
+  margin-right: 2rem;
+  padding-bottom: 2rem;
+
+  text-align: right;
+  word-break: keep-all;
+}
+
+.section-text {
+  flex: 2;
+  min-width: 20rem;
+}
+
+.section-list {
+  padding-left: 1rem;
+}
+
+.section-list > li {
+  margin-bottom: 1rem;
+}
+
+/* Psychotherpist >>> */
+.intro-description {
+  max-width: 30rem;
+}
+
+.intro-wrapper {
+  display: flex;
+  /* flex-wrap: wrap; */
+}
+
+.intro-title {
+  flex: 1;
+
+  font-size: 1.2rem;
+
+  margin-right: 2rem;
+  padding-bottom: 2rem;
+
+  text-align: right;
+  word-break: keep-all;
+}
+
+.intro-container {
+  flex: 2;
+}
+
+.profile-image {
+  width: 20rem;
+  height: 30rem;
+  object-fit: cover;
+  display: block;
+
+  margin-bottom: -1.5rem;
+}
+.intro {
+  display: block;
+}
+
+.intro-container > ul {
+  line-height: 200%;
+}
+.intro-container > p {
+  margin-top: 3rem;
+}
+.intro-container a {
+  text-decoration: underline;
+}
+
+@media (width <= 35rem) {
+  .section-description {
+    max-width: none;
+  }
+
+  .profile-image {
+    margin-inline: auto;
+  }
+
+  .intro-wrapper {
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+  }
+
+  .intro-title {
+    text-align: left;
+  }
+}
+
+/* <<< Psychotherapist */
+
+/* Contact >>> */
+
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  row-gap: 5rem;
+}
+
+.contact-title {
+  text-align: right;
+  font-size: 1.2rem;
+  margin-right: 2rem;
+}
+
+.contact-form-wrapper {
+  position: relative;
+  margin-right: 25%;
+}
+
+.sent-popup {
+  position: absolute;
+  background-color: #333;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 70%;
+  border-radius: 1rem;
+  z-index: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 2rem;
+
+  text-align: center;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 800;
+
+  transition: 1s;
+}
+
+.required-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #ff5353;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  margin-left: 0.5rem;
+  transform: translateY(-50%);
+}
+
+#contact-fieldset {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  row-gap: 2.5rem;
+
+  margin: 0;
+  padding: 0;
+
+  border: none;
+}
+
+.phone-email-wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.input-wrapper {
+  --inline-padding: 0.5rem;
+  width: calc(100% - 2 * var(--inline-padding));
+
+  transform: translateX(var(--inline-padding));
+}
+
+.input-wrapper > * {
+  display: block;
+}
+
+.input-wrapper > label {
+  position: relative;
+  margin-bottom: 0.8rem;
+}
+
+#contact-description {
+  height: 15rem;
+}
+
+.input-wrapper > input,
+.input-wrapper > textarea {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-bottom: 2px solid #666;
+  background: none;
+
+  font-size: 1rem;
+
+  font-family: "Noto Sans KR", sans-serif;
+
+  transition: color 1s;
+}
+
+.fade {
+  color: rgba(0, 0, 0, 0);
+}
+
+#description-wrapper {
+  grid-column: 1/3;
+}
+
+.submit-button-container {
+  position: relative;
+  width: 10rem;
+  height: 3rem;
+  margin-top: 3rem;
+  margin-inline: auto;
+  transition: 0.5s;
+}
+
+.submit-button-container > video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  z-index: -1;
+
+  filter: grayscale() brightness(0.3);
+}
+
+.submit-button-container button {
+  font-family: "Noto Sans KR", serif;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  font-size: 1rem;
+  font-weight: 900;
+  background-color: #222;
+  color: white;
+
+  border: none;
+
+  letter-spacing: 10%;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.submit-button-container button:hover {
+  background: #999;
+}
+
+.button-fade {
+  opacity: 0;
+}
+
+.button-larger {
+  width: 20rem;
+  height: 6rem;
+}
+
+@media (width <= 35em) {
+  .contact-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .spacer {
+    display: none;
+  }
+
+  #contact-fieldset {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-title {
+    text-align: left;
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+  }
+
+  .contact-form-wrapper {
+    margin-right: 0;
+  }
+
+  .input-wrapper > input {
+    width: 15rem;
+  }
+}
+
+input:focus,
+textarea:focus {
+  outline: #666 2px solid;
+  outline-offset: 2px;
+}
+
+.page-fade {
+  transition: opacity 2s ease;
+  opacity: 1;
+}
+
+.page-fade-out {
+  opacity: 0;
+  display: none !important;
+}
+
+.error-message {
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(20rem, 80%);
+  height: 5rem;
+  background: #ff5353;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+
+  font-weight: 800;
+  color: #fff;
+  transition: 1s;
+
+  pointer-events: none;
+}
+
+/* <<< Contact */
+
+@media (width <= 35em) {
+  body {
+    --wrapper-padding-inline: 1.5rem;
+  }
+  .wrapper {
+    padding-block: 3rem;
+  }
+
+  main {
+    margin-block: 0;
+  }
+
+  .section-title {
+    text-align: left;
+  }
+
+  .header-illustration {
+    position: static;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: 30rem;
+  }
+
+  .header-container {
+    flex-direction: column;
+  }
+
+  nav {
+    order: 2;
+  }
+
+  .logo-name {
+    order: 1;
+    font-size: 1.5rem;
+    margin-top: -1rem;
+    margin-bottom: -2rem;
+
+    margin-right: 0;
+  }
+
+  .logo-name-part:nth-child(2) {
+    margin-top: 2rem;
+  }
+
+  .logo-name-part:nth-child(3) {
+    margin-top: 5rem;
+  }
+}
+
+/* Inquired >>> */
+
+.inquired-canvas {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  transition: opacity 3s ease;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.full-illustration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  z-index: -1;
+
+  /* filter: brightness(0.5); */
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0 !important;
+}
+
+.inquired-text-wrapper {
+  padding-inline: 2rem;
+  opacity: 1;
+  transition: 1s;
+}
+
+.inquired-text {
+  /* color: white; */
+  font-size: clamp(2rem, 8vw, 2.4rem);
+  margin-bottom: 1rem;
+  /* letter-spacing: 6%; */
+  font-weight: 800;
+}
+
+.inquired-subtext {
+  width: clamp(10rem, 75vw, 22rem);
+  margin-bottom: 3rem;
+  /* color: white; */
+}
+
+.back-button {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.arrow {
+  --arrow-size: 0.4rem;
+  border: solid black;
+  border-width: 0 var(--arrow-size) var(--arrow-size) 0;
+  display: inline-block;
+  padding: var(--arrow-size);
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+/* <<< Inquired */
