@@ -9,10 +9,10 @@ export default async function sendEmail(request, response) {
   console.log(name, phone, email, description);
 
   const { data, error } = await resend.emails.send({
-    from: "오로라 심리상담 연구소 <onboarding@resend.dev>",
+    from: "오로라 심리상담 연구소 <contact@contact.auroracft.com>",
     to: [`${process.env.EMAIL_RECEIVER}`],
     subject: "새로운 문의",
-    html: `      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto;">
+    html: `<div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto;">
         <h2 style="background: #007bff; color: white; padding: 10px; text-align: center;">새로운 문의가 도착했습니다</h2>
         <p><strong>성함:</strong> ${name}</p>
         <p><strong>연락처:</strong> ${phone}</p>
